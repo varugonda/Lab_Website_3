@@ -205,6 +205,7 @@ app.get('/player_info', function(req, res){
     .then(function(rows){
       res.render('pages/player_info',{
         my_title: 'Player Information',
+        p_select: '',
         data: rows
       });
     })
@@ -212,6 +213,7 @@ app.get('/player_info', function(req, res){
       req.flash('Error, unable to handle request', err);
       res.render('/pages/player_info',{
         my_title: 'Player Information',
+        p_select: '',
         data: ''
       });
     })
